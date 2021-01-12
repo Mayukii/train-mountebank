@@ -1,0 +1,27 @@
+{
+    "imposters": [
+        {
+            "port": "9000",
+            "protocol": "http",
+            "name": "mockService",
+            "defaultResponse":{
+                "statusCode":404,
+                "body":{
+                    "status":{
+                        "code":"404",
+                        "message":"NOT FOUND"
+                    }
+                }
+            },
+            "stubs": [
+                {
+                    "predicates": [ <% include creditcard/success/success_predicates.ejs %> ],
+                    "responses": [ <% include creditcard/success/success_response.ejs %> ]
+                },
+                {
+                    "responses": [ <% include proxy.ejs %> ]
+                }
+            ]
+        }
+    ]
+}
