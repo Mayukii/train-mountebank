@@ -19,6 +19,10 @@
                     "responses": [ <% include creditcard/success/success_response.ejs %> ]
                 },
                 {
+                    "predicates": [ <% include student/success/success_predicates.ejs %> ],
+                    "responses": [ <% include student/success/success_response.ejs %> ]
+                },
+                {
                     "responses": [ <% include proxy.ejs %> ]
                 }
             ]
